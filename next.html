@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>เกี่ยวกับฉัน</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="Style02.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid justify-content-end px-3 py-2">
+      <a href="index.html" class="btn btn-outline-light me-2 lang" data-key="home">หน้าแรก</a>
+      <a href="works.html" class="btn btn-outline-light lang" data-key="works">ผลงาน</a>
+      <button id="lang-toggle" class="btn btn-outline-warning ms-2">EN</button>
+    </div>
+  </nav>
+
+  <!-- รูปภาพ -->
+  <img src="./19A767D9-37D3-4422-8269-0F3FA738C672.JPG" class="circle-img top-right" />
+  <img src="./IMG_8457.jpg" class="circle-img bottom-right" />
+
+  <!-- เนื้อหา -->
+  <div class="container py-5 mt-5">
+    <h1 class="lang" id="profile">ประวัติส่วนตัว</h1>
+    <div id="intro-text" class="mt-4"></div>
+    <button onclick="goBack()" class="btn btn-outline-light mt-3 lang" id="back">กลับหน้าแรก</button>
+  </div>
+  
+  <!-- JavaScript -->
+  <script>
+    const translations = {
+      th: [
+        "ชื่อ นายกวินท์ สุนทา เกิด วันที่ 2 กันยายน 2552 อายุ 15 ปี สัญชาติไทย ศาสนา พุทธ มาจากโรงเรียนเทพศิรินทร์ร่มเกล้า แผนการเรียน คณิต-วิทย์เสริมภาษา งานอดิเรก ชอบเขียน web และชอบแก้โจทย์คณิต",
+        "มาจากโรงเรียนเทพศิรินทร์ร่มเกล้า แผนการเรียน คณิต-วิทย์เสริมภาษา",
+        "งานอดิเรก ชอบเขียน web และชอบแก้โจทย์คณิต",
+        "ความสนใจหลักของผมคืออยากสร้างหุ่นยนต์ที่ทำได้ทุกอย่างครับ!",
+        "และร่วมทำงานในทีมที่เปลี่ยนแปลงโลกครับ",
+      ],
+      en: [
+        "My name is Kawin Soonta. I was born on September 2, 2009. I'm 15 years old. I'm Thai. I study at Debsirin Romklao School, Math-Science with Language program. I love making websites and solving math problems.",
+        "I come from Debsirin Romklao School, Math-Science + Language Program.",
+        "My hobbies include web development and solving math challenges.",
+        "My main interest is building a robot that can do everything!",
+        "And I want to be part of a team that changes the world.",
+      ]
+    };
+
+    const colors = {
+      th: ["#00CC99", "#33CC33", "#FFCC00", "#66FF66", "#FF9933"],
+      en: ["#FF6666", "#3399FF", "#FF66CC", "#00CED1", "#FF9966"]
+    };
+
+    let currentLang = 'th';
+    
+    function showLines() {
+      const container = document.getElementById("intro-text");
+      container.innerHTML = "";
+      for (let i = 0; i < translations.th.length; i++) {
+        const thText = document.createElement("p");
+        thText.className = "th-text";
+        thText.style.color = colors.th[i % colors.th.length];
+        thText.textContent = "➤ " + translations.th[i];
+
+        const enText = document.createElement("p");
+        enText.className = "en-text";
+        enText.style.color = colors.en[i % colors.en.length];
+        enText.textContent = "➤ " + translations.en[i];
+
+        container.appendChild(thText);
+        container.appendChild(enText);
+      }
+
+      updateLangUI();
+    }
+
+    function updateLangUI() {
+      const isThai = currentLang === 'th';
+      document.querySelectorAll('.th-text').forEach(e => e.style.display = isThai ? 'block' : 'none');
+      document.querySelectorAll('.en-text').forEach(e => e.style.display = isThai ? 'none' : 'block');
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', () => {
+      currentLang = currentLang === 'th' ? 'en' : 'th';
+      document.getElementById("lang-toggle").textContent = currentLang === "th" ? "EN" : "TH";
+      updateLangUI();
+    });
+
+    window.onload = () => {
+      showLines();
+      updateLangUI();
+    };
+
+    function goBack() {
+      window.location.href = "index.html";
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

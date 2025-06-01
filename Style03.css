@@ -1,0 +1,38 @@
+.bg-full {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;    /* เต็มความกว้าง */
+    height: 100%;   /* เต็มความสูง */
+    background: url('./pngtree-smart-robot-arm-advertising-background-backgroundrobotblue-backgrounddark-backgroundlightlight-image_68405.jpg') no-repeat center center;
+    background-size: cover;  /* ยืดเต็มทั้งแนวตั้งและแนวนอน */
+    z-index: -1;
+  }
+  
+  /* 2. ปรับการ์ดให้มีขนาดพอดี */
+  .card {
+    height: 100%; /* ทำให้การ์ดเต็มความสูง */
+  }
+  
+  .card-img-top {
+    height: 200px; /* ปรับความสูงของรูป */
+    object-fit: cover; /* ครอบรูปให้พอดีกับขนาด */
+  }
+  
+  /* 3. จัดวางการ์ดในรูปแบบคอลัมน์ 3 อัน */
+  .row.g-4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2%;        /* เว้นระยะระหว่างการ์ด */
+  }
+  
+  .row.g-4 .col-md-4 {
+    flex: 0 0 32%;  /* แต่ละคอลัมน์กว้าง 32% */
+    max-width: 32%;
+  }
+  
+  /* ปรับพื้นหลังของการ์ด */
+  .card.bg-secondary {
+    background-color: #6c757d !important;
+  }

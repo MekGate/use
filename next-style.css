@@ -1,0 +1,26 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
+    animation: backgroundChange 15s ease infinite;
+  }
+  
+  @keyframes backgroundChange {
+    0% {
+      background-color: #ff6347; /* สีส้ม */
+    }
+    25% {
+      background-color: #32cd32; /* สีเขียว */
+    }
+    50% {
+      background-color: #1e90ff; /* สีน้ำเงิน */
+    }
+    75% {
+      background-color: #ff1493; /* สีชมพู */
+    }
+    100% {
+      background-color: #ffd700; /* สีทอง */
+    }
+  }

@@ -1,0 +1,52 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background: url('./bd44e391b280e03f7e685a1c986d0405.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.circle-img {
+  position: absolute;
+  width: 13%; /* ปรับขนาดของรูปให้เป็นเปอร์เซ็นต์ */
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.top-right {
+  top: 2%;     /* ปรับตำแหน่งของรูปให้ขึ้นจากด้านบน */
+  right: 2%;    /* ปรับตำแหน่งของรูปให้ห่างจากขวา */
+}
+
+.bottom-right {
+  bottom: 2%;  /* ปรับตำแหน่งของรูปให้ห่างจากด้านล่าง */
+  right: 2%;   /* ปรับตำแหน่งของรูปให้ห่างจากขวา */
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+/* ปรับ margin-top เป็นเปอร์เซ็นต์ */
+#intro-text {
+  max-width: 80%; /* กำหนดความกว้างเป็น 80% ของความกว้างหน้าจอ */
+  margin-top: 5%; /* กำหนดระยะห่างจากหัวข้อ 'เกี่ยวกับฉัน' เป็น 5% */
+  padding: 2%;    /* ปรับ padding ให้น้อยลงเป็นเปอร์เซ็นต์ */
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+/* ปรับขนาดตัวหนังสือให้ใหญ่ขึ้นโดยใช้เปอร์เซ็นต์ */
+#intro-text p {
+  font-size: 2.5vw;    /* ใช้ 'vw' เพื่อปรับขนาดตัวอักษรตามความกว้างของหน้าจอ */
+  line-height: 1.6;
+  margin-bottom: 2%;
+}
+#intro-text p {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
